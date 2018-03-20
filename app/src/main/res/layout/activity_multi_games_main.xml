@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context="harkorrezun.multigames_clicker.MultiGamesMAIN">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:text="PussyDestroyer"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="4dp"
+        tools:text="PussyDestroyer" />
+
 </android.support.constraint.ConstraintLayout>

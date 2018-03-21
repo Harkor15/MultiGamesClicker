@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class MultiGamesMAIN extends AppCompatActivity {
 
+    public void oKur(View v){
+        Toast.makeText(this,"O kurła, działa!!!",Toast.LENGTH_SHORT).show();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

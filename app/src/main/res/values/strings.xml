@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MultiGames-Clicker</string>
+    <string name="Clicker">Clicker</string>
+    <string name="CoimngSoon">Coming soon</string>
 </resources>

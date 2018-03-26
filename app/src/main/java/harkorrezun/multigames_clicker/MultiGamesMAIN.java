@@ -1,18 +1,23 @@
 package harkorrezun.multigames_clicker;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
+import android.support.v4.app.FragmentTransaction;
 
 public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.MenuFragmentListener{
 
     View mDecorView;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+
+
+
     public void oKur(View v){
         Toast.makeText(this,"O kurła, działa!!!",Toast.LENGTH_SHORT).show();
     }
@@ -33,8 +38,8 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
                             | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
-
-
+        fragmentManager=getSupportFragmentManager();
+        changeContent(0);
     }
 
 
@@ -42,6 +47,22 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
     public void changeContent(int fragNr) {
         //TODO: zmiana fragmentu prawego
         Toast.makeText(this,"Pikachu wybieram cie: "+fragNr,Toast.LENGTH_SHORT).show();
+        Fragment fragment;
+        switch(fragNr){
+            case 1: fragment=new F1_clicker(); break;
+            case 2: fragment=new F2_shop(); break;
+            default: fragment=new F0_welcome();break;
+        }
+        fragmentTransaction=fragmentManager.beginTransaction();
+        if(fragNr==0){
+            fragmentTransaction.add(R.id.rightContent,fragment,"FragmentContent");
+
+        }else{
+            fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentContent");
+
+        }
+        fragmentTransaction.commit();
+
     }
 }
 

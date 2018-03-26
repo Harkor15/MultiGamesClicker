@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/CoimngSoon"
+                android:text="@string/shop"
                 android:textAlignment="center"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintLeft_toLeftOf="parent"

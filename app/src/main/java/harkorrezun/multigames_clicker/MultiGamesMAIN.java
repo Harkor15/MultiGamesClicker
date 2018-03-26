@@ -54,13 +54,7 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
             default: fragment=new F0_welcome();break;
         }
         fragmentTransaction=fragmentManager.beginTransaction();
-        if(fragNr==0){
-            fragmentTransaction.add(R.id.rightContent,fragment,"FragmentContent");
-
-        }else{
-            fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentContent");
-
-        }
+        fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentContent");
         fragmentTransaction.commit();
 
     }

@@ -3,4 +3,6 @@
     <string name="Clicker">Clicker</string>
     <string name="CoimngSoon">Coming soon</string>
     <string name="shop">Shop</string>
+    <string name="carrot" >carrots</string>
+    <string name="Ucarrots">Your carrots:</string>
 </resources>

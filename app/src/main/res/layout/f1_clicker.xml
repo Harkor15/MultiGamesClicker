@@ -104,47 +104,47 @@
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal4"
+        android:id="@+id/small4"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal3"
+        app:layout_constraintTop_toBottomOf="@+id/small3"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal3"
+        android:id="@+id/small3"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal4"
+        app:layout_constraintBottom_toTopOf="@+id/small4"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal2"
+        app:layout_constraintTop_toBottomOf="@+id/small2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal2"
+        android:id="@+id/small2"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal3"
+        app:layout_constraintBottom_toTopOf="@+id/small3"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal1"
+        app:layout_constraintTop_toBottomOf="@+id/small1"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal1"
+        android:id="@+id/small1"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal2"
+        app:layout_constraintBottom_toTopOf="@+id/small2"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"

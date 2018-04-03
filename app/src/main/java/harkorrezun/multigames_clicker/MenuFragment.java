@@ -21,6 +21,8 @@ public class MenuFragment extends Fragment{
     Button btn2;
     Button btn3;
     Button btn4;
+    Button btn5;
+    Button btn6;
 
 
 
@@ -50,7 +52,6 @@ public class MenuFragment extends Fragment{
                 activityComander.changeContent(1);
             }
         });
-
         btn2=view.findViewById(R.id.btn2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +71,20 @@ public class MenuFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 activityComander.changeContent(4);
+            }
+        });
+        btn5=view.findViewById(R.id.btn5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityComander.changeContent(5);
+            }
+        });
+        btn6=view.findViewById(R.id.btn6);
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityComander.changeContent(6);
             }
         });
 

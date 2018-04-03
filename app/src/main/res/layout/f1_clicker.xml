@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="25dp">
 
-    <pl.droidsonroids.gif.GifTextView
-        android:id="@+id/gifTextView"
-        android:layout_width="386dp"
-        android:layout_height="242dp"
 
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:drawableTop="@drawable/ban"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" />
 
     <ImageView
         android:id="@+id/piano4"
@@ -170,6 +160,19 @@
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/your_carrots"
         app:layout_constraintStart_toEndOf="@+id/your_carrots" />
+
+    <ImageView
+        android:id="@+id/carrot"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/small2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mar" />
 
 
 </android.support.constraint.ConstraintLayout>

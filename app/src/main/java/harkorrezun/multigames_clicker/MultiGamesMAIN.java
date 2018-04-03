@@ -45,12 +45,11 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
 
     @Override
     public void changeContent(int fragNr) {
-        //TODO: zmiana fragmentu prawego
-        Toast.makeText(this,"Pikachu wybieram cie: "+fragNr,Toast.LENGTH_SHORT).show();
         Fragment fragment;
         switch(fragNr){
             case 1: fragment=new F1_clicker(); break;
             case 2: fragment=new F2_shop(); break;
+            case 6: fragment=new F999_betaSettings(); break;
             default: fragment=new F0_welcome();break;
         }
         fragmentTransaction=fragmentManager.beginTransaction();

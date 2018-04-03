@@ -1,5 +1,7 @@
 package harkorrezun.multigames_clicker;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,20 +16,23 @@ import android.widget.Toast;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Harkor on 2018-03-26.
  */
 
 public class F1_clicker extends Fragment {
-
-
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     ImageView piano1,piano2,piano3,piano4;
     ImageView mid1,mid2,mid3,mid4;
     ImageView small1,small2,small3,small4;
     TextView amountView;
-    int amount=0;
-    int multiplay=10;
+    ImageView carrot;
+    int amount;
+    int multiplay;
+
     int [] sm=new int [5];
     int [] md=new int [5];
     int [] pi=new int [5];
@@ -38,6 +43,11 @@ public class F1_clicker extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.f1_clicker,container,false);
+        sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        amount=sharedPreferences.getInt("carrots",0);
+        multiplay=sharedPreferences.getInt("multiplay",1);
+        carrot=view.findViewById(R.id.carrot);
         piano1= view.findViewById(R.id.piano1);
         piano2= view.findViewById(R.id.piano2);
         piano3= view.findViewById(R.id.piano3);
@@ -51,6 +61,7 @@ public class F1_clicker extends Fragment {
         small3= view.findViewById(R.id.small3);
         small4= view.findViewById(R.id.small4);
         amountView=view.findViewById(R.id.carrotAmount);
+        amountView.setText(amount+"");
         piano1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +92,14 @@ public class F1_clicker extends Fragment {
 
         return view;
     }
+    @Override
+    public void onPause() {
+        editor.putInt("carrots",amount);
+        editor.commit();
+        Toast.makeText(getContext(),"OnPause!  "+amount,Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+
     public void addCash(int idButton){
             int tmp=1;
         tmp*=multiplay;
@@ -98,6 +117,11 @@ public class F1_clicker extends Fragment {
         amountView.setText(""+amount);
 
         fishPush();
+        try {
+            fireworks();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public void startAct(){
         for(int i=1;i<5;i++){
@@ -167,7 +191,6 @@ public class F1_clicker extends Fragment {
 
         setAllButtons();
     }
-
     public int whichColor(int id){
         if(id==1){
             return R.color.pia1;
@@ -179,7 +202,6 @@ public class F1_clicker extends Fragment {
             return R.color.pia4;
         }
     }
-
     public void fishPush(){
         for(int i=1;i<5;i++){
             pi[i]=md[i];
@@ -228,5 +250,12 @@ public class F1_clicker extends Fragment {
         piano3.setImageResource(whichColor(pi[3]));
         piano4.setImageResource(whichColor(pi[4]));
     }
+    public void fireworks() throws InterruptedException {
+    //carrot.setMinimumHeight(320);
+    //carrot.setMinimumHeight(320);
+    //TimeUnit.MILLISECONDS.sleep(500);
+    //carrot.setMinimumHeight(300);
+    //carrot.setMinimumHeight(300);
 
+    }
     }

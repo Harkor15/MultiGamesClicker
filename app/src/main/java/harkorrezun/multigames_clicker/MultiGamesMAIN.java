@@ -10,18 +10,11 @@ import android.view.View;
 import android.widget.Toast;
 import android.support.v4.app.FragmentTransaction;
 
-public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.MenuFragmentListener{
+public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.MenuFragmentListener, F5_gambling.GamblingFragmentListener {
 
     View mDecorView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-
-
-
-    public void oKur(View v){
-        Toast.makeText(this,"O kurła, działa!!!",Toast.LENGTH_SHORT).show();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +42,9 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
         switch(fragNr){
             case 1: fragment=new F1_clicker(); break;
             case 2: fragment=new F2_shop(); break;
+            case 3: fragment=new F3_oppening(); break;
+            case 4: fragment=new F4_collection(); break;
+            case 5: fragment=new F5_gambling(); break;
             case 6: fragment=new F999_betaSettings(); break;
             default: fragment=new F0_welcome();break;
         }
@@ -56,6 +52,18 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
         fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentContent");
         fragmentTransaction.commit();
 
+    }
+
+    @Override
+    public void toGambling(int gID) {
+        Fragment fragment;
+        switch(gID){
+            case 1: fragment=new G1_rulette(); break;
+            default: fragment=new G1_rulette(); break;
+        }
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentGambling");
+        fragmentTransaction.commit();
     }
 }
 

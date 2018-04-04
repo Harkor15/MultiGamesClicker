@@ -5,4 +5,11 @@
     <string name="shop">Shop</string>
     <string name="carrot">carrots</string>
     <string name="Ucarrots">Your carrots:</string>
+    <string name="oppening">Oppening</string>
+    <string name="collection">Collection</string>
+    <string name="gambling" >Gambling</string>
+    <string name="rulette">Rulette</string>
+    <string name="saper">Saper</string>
+    <string name="crash">Crash</string>
+    <string name="cards">Cards</string>
 </resources>

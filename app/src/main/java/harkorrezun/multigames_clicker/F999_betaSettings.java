@@ -34,8 +34,8 @@ Button save;
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("multiplay",multiplay.getTextAlignment());
-                editor.putInt("carrots",carrots.getTextAlignment());
+                editor.putInt("multiplay",Integer.parseInt(multiplay.getText().toString()));
+                editor.putInt("carrots",Integer.parseInt(carrots.getText().toString()));
                 editor.commit();
             }
         });

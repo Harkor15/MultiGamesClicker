@@ -101,19 +101,23 @@ public class F1_clicker extends Fragment {
     }
 
     public void addCash(int idButton){
-            int tmp=1;
-        tmp*=multiplay;
+        int tmp=multiplay;
+        //int tmp=1;
+        //tmp*=multiplay;
         if(pi[idButton]==1){
-            tmp*=1;
+            tmp*=(-5);
         }else if(pi[idButton]==2){
-            tmp*=2;
+            tmp*=(-5);
         }else if(pi[idButton]==3){
-        tmp*=3;
+        tmp*=(-5);
         }else{
             tmp*=10;
         }
 
         amount+=tmp;
+        if(amount<0){
+            amount=0;
+        }
         amountView.setText(""+amount);
 
         fishPush();

@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="25dp">
 
-    <pl.droidsonroids.gif.GifTextView
-        android:id="@+id/gifTextView"
-        android:layout_width="386dp"
-        android:layout_height="242dp"
 
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:drawableTop="@drawable/ban"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" />
 
     <ImageView
         android:id="@+id/piano4"
@@ -104,47 +94,47 @@
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal4"
+        android:id="@+id/small4"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal3"
+        app:layout_constraintTop_toBottomOf="@+id/small3"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal3"
+        android:id="@+id/small3"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal4"
+        app:layout_constraintBottom_toTopOf="@+id/small4"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal2"
+        app:layout_constraintTop_toBottomOf="@+id/small2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal2"
+        android:id="@+id/small2"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal3"
+        app:layout_constraintBottom_toTopOf="@+id/small3"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
-        app:layout_constraintTop_toBottomOf="@+id/smal1"
+        app:layout_constraintTop_toBottomOf="@+id/small1"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
-        android:id="@+id/smal1"
+        android:id="@+id/small1"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/smal2"
+        app:layout_constraintBottom_toTopOf="@+id/small2"
         app:layout_constraintEnd_toStartOf="@+id/midle4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -170,6 +160,19 @@
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/your_carrots"
         app:layout_constraintStart_toEndOf="@+id/your_carrots" />
+
+    <ImageView
+        android:id="@+id/carrot"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/small2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mar" />
 
 
 </android.support.constraint.ConstraintLayout>

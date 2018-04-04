@@ -68,18 +68,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/CoimngSoon"
+                android:text="@string/oppening"
                 android:textAlignment="center"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/btn5" />
 
             <Button
                 android:id="@+id/btn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/CoimngSoon"
+                android:text="@string/collection"
                 android:textAlignment="center"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -87,11 +87,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn3" />
 
             <Button
-                android:id="@+id/textView6"
+                android:id="@+id/btn5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/CoimngSoon"
+                android:text="@string/gambling"
                 android:textAlignment="center"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -99,12 +99,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
             <Button
-                android:id="@+id/textView10"
+                android:id="@+id/btn6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="200dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/CoimngSoon"
+                android:text="Beta Settings"
                 android:textAlignment="center"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintLeft_toLeftOf="parent"

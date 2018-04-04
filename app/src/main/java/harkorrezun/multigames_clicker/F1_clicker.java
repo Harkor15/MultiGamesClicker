@@ -96,7 +96,7 @@ public class F1_clicker extends Fragment {
     public void onPause() {
         editor.putInt("carrots",amount);
         editor.commit();
-        Toast.makeText(getContext(),"OnPause!  "+amount,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"OnPause!  "+amount,Toast.LENGTH_SHORT).show();
         super.onPause();
     }
 

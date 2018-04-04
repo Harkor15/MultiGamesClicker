@@ -18,7 +18,9 @@ import android.widget.Button;
 
 public class F5_gambling extends Fragment {
     Button rulette;
-
+    Button sapper;
+    Button crash;
+    Button cards;
 
     GamblingFragmentListener activityComanderr;
 
@@ -47,6 +49,28 @@ public class F5_gambling extends Fragment {
                 activityComanderr.toGambling(1);
             }
         });
+        sapper=view.findViewById(R.id.saper);
+        sapper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityComanderr.toGambling(2);
+            }
+        });
+        crash=view.findViewById(R.id.crash);
+        crash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityComanderr.toGambling(3);
+            }
+        });
+        cards=view.findViewById(R.id.cards);
+        cards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityComanderr.toGambling(4);
+            }
+        });
+
         return view;
     }
 }

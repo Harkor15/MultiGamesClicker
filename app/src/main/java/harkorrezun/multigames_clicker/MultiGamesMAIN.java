@@ -59,6 +59,9 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
         Fragment fragment;
         switch(gID){
             case 1: fragment=new G1_rulette(); break;
+            case 2: fragment=new G2_sapper(); break;
+            case 3: fragment=new G3_crash(); break;
+            case 4: fragment=new G4_cards(); break;
             default: fragment=new G1_rulette(); break;
         }
         fragmentTransaction=fragmentManager.beginTransaction();

@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="0"
+        android:text="@string/loading"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/your_carrots"
         app:layout_constraintStart_toEndOf="@+id/your_carrots" />

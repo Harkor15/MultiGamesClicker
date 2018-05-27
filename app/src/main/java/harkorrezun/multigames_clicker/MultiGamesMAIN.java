@@ -11,7 +11,7 @@ import android.widget.Toast;
 import android.support.v4.app.FragmentTransaction;
 
 public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.MenuFragmentListener, F5_gambling.GamblingFragmentListener {
-
+    DatabaseHelper myDb;
     View mDecorView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -20,6 +20,7 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_games_main);
+                            myDb=new DatabaseHelper(this);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         mDecorView = getWindow().getDecorView();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

@@ -89,6 +89,16 @@ public class F1_clicker extends Fragment {
 
         startAct();
 
+        ImageView carrot =view.findViewById(R.id.carrot);
+        carrot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: New multiplayer for carrot
+                //TODO: Adding carrots for clicking carrots
+            }
+        });
+
+
 
         return view;
     }
@@ -197,11 +207,11 @@ public class F1_clicker extends Fragment {
     }
     public int whichColor(int id){
         if(id==1){
-            return R.color.pia1;
+            return R.color.jet;
         }else if(id==2){
-            return R.color.pia2;
+            return R.color.jet;
         }else if(id==3){
-            return R.color.pia3;
+            return R.color.jet;
         }else{
             return R.color.pia4;
         }

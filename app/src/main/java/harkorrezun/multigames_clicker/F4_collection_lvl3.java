@@ -14,7 +14,7 @@ public class F4_collection_lvl3 extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.f4_collection_lvl3,container,false);
-        Bundle arguments = getArguments();
+        //Bundle arguments = getArguments();
         //int collection = arguments.getInt("collection");//          TODO: ID OF COLECTION TO CREATE VIEW
 
         TextView textView=view.findViewById(R.id.colName);

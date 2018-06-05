@@ -1,11 +1,16 @@
 package harkorrezun.multigames_clicker;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -28,6 +33,24 @@ public class F2_shop_lvl2 extends Fragment {
         gridView.setNumColumns(4);
         TextView textView=view.findViewById(R.id.categoryName);
         textView.setText("Category: "+category);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            String mess=getResources().getString(R.string.wannaBuy);
+            new AlertDialog.Builder(getContext())
+                    .setTitle(R.string.buy)
+                    .setMessage(mess+" "+prices[i]+"?")
+                    .setNegativeButton(R.string.no,null)
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //TODO: take money and give card;
+
+                        }
+                    }).create().show();
+
+            }
+        });
         return view;
     }
 

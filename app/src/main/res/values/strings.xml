@@ -19,4 +19,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="buy_open">Buy and open</string>
+    <string name="buy">Buy</string>
+    <string name="wannaBuy">Do you wanna buy this pack for</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

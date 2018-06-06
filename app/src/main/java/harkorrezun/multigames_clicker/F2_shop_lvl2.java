@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,17 @@ public class F2_shop_lvl2 extends Fragment {
                     .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+
+                            FragmentManager fragmentManager=getFragmentManager();
+                            Fragment fragment=new F2_shop_opening();
+                            //Bundle bundle=new Bundle();
+                            //bundle.putInt("",);
+                            //fragment.setArguments(bundle);
+                            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.rightContent,fragment);
+                            fragmentTransaction.commit();
+
+
                             //TODO: take money and give card;
 
                         }

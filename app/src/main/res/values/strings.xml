@@ -23,4 +23,5 @@
     <string name="wannaBuy">Do you wanna buy this pack for</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="skip">Skip</string>
 </resources>

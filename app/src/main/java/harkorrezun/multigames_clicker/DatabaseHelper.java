@@ -21,12 +21,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String T1_COL2 ="NAME";
     public static final String T1_COL3 ="CATEGORY";
     public static final String T1_COL4 ="PRICE";
+    public static final String T1_COL5 ="IMAGE";
 
     public static final String T2_COL0 ="_ID";
     public static final String T2_COL1 ="ID_COLLECTION";
     public static final String T2_COL2 ="ID_CARD";
     public static final String T2_COL3 ="NAME";
     public static final String T2_COL4 ="AMOUNT";
+    public static final String T2_COL5 ="IMAGE";
 
 
 

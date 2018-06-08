@@ -40,28 +40,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-          final String T1_B="INSERT INTO "+TABLE_NAME+" ("+T1_COL1+", "+ T1_COL2+", "+T1_COL3+", "+T1_COL4+") VALUES (";
-          final String T2_B="INSERT INTO "+TABLE2_NAME+" ("+T2_COL0+", "+T2_COL1+", "+T2_COL2+", "+T2_COL3+", "+T2_COL4+") "+"VALUES (";
+          final String T1_B="INSERT INTO "+TABLE_NAME+" ("+T1_COL1+", "+ T1_COL2+", "+T1_COL3+", "+T1_COL4+", "+T1_COL5+") VALUES (";
+          final String T2_B="INSERT INTO "+TABLE2_NAME+" ("+T2_COL0+", "+T2_COL1+", "+T2_COL2+", "+T2_COL3+", "+T2_COL4+", "+T2_COL5+") "+"VALUES (";
 
-    db.execSQL("create table "+ TABLE_NAME+" ("+T1_COL1+" INTEGER PRIMARY KEY, "+T1_COL2+" TEXT,"+T1_COL3+" INTEGER,"+T1_COL4+" INTEGER);");
-    db.execSQL("create table "+ TABLE2_NAME+" ("+T2_COL0+" INTEGER PRIMARY KEY,"+T2_COL1+" INTEGER, "+T2_COL2+" INTEGER, "+T2_COL3+" TEXT, "+T2_COL4+" INTEGER);");
+    db.execSQL("create table "+ TABLE_NAME+" ("+T1_COL1+" INTEGER PRIMARY KEY, "+T1_COL2+" TEXT,"+T1_COL3+" INTEGER,"+T1_COL4+" INTEGER,"+T1_COL5+" INT);");
+    db.execSQL("create table "+ TABLE2_NAME+" ("+T2_COL0+" INTEGER PRIMARY KEY,"+T2_COL1+" INTEGER, "+T2_COL2+" INTEGER, "+T2_COL3+" TEXT, "+T2_COL4+" INTEGER,"+T2_COL5+" INT);");
 
-    db.execSQL(T1_B+ "1,'Vegetables',1,100);");
-    db.execSQL(T2_B+ "1,1,1,'Golden Carrot',0);");
-    db.execSQL(T2_B+ "2,1,2,'Corn',0);");
-    db.execSQL(T2_B+ "3,1,3,'Beetroot',0);");
-    db.execSQL(T2_B+ "4,1,4,'Radish',0);");
-    db.execSQL(T2_B+ "5,1,5,'Chili',0);");
-    db.execSQL(T2_B+ "6,1,6,'Red Pepper',0);");
-    db.execSQL(T2_B+ "7,1,7,'Mushroom',0);");
-    db.execSQL(T2_B+ "8,1,8,'Spinach',0);");
-    db.execSQL(T2_B+ "9,1,9,'Broccoli',0);");
-    db.execSQL(T2_B+ "10,1,10,'Cabbage',0);");
-    db.execSQL(T2_B+ "11,1,11,'Cucumber',0);");
-    db.execSQL(T2_B+ "12,1,12,'Tomato',0);");
-    db.execSQL(T2_B+ "13,1,13,'Salad',0);");
-    db.execSQL(T2_B+ "14,1,14,'Potatoes',0);");
-    db.execSQL(T2_B+ "15,1,15,'Onion',0);");
+        db.execSQL(T1_B+ "1,'Brayan Machen',1, 250,"+R.drawable.t1_1+");");
+        db.execSQL(T2_B+ "1,1,1,'Lewndowsky',0,"+R.drawable.t2_1_1+");");
+        db.execSQL(T2_B+ "2,1,2,'Hammers',0,"+R.drawable.t2_1_2+");");
+        db.execSQL(T2_B+ "3,1,3,'Bonteng',0,"+R.drawable.t2_1_3+");");
+        db.execSQL(T2_B+ "4,1,4,'Rabben',0,"+R.drawable.t2_1_4+");");
+        db.execSQL(T2_B+ "5,1,5,'Thiogo',0,"+R.drawable.t2_1_5+");");
+        db.execSQL(T2_B+ "6,1,6,'Vodal',0,"+R.drawable.t2_1_6+");");
+        db.execSQL(T2_B+ "7,1,7,'Alibaba',0,"+R.drawable.t2_1_7+");");
+        db.execSQL(T2_B+ "8,1,8,'Robbery',0,"+R.drawable.t2_1_8+");");
+        db.execSQL(T2_B+ "9,1,9,'Martonez',0,"+R.drawable.t2_1_9+");");
+        db.execSQL(T2_B+ "10,1,10,'Rodringuez',0,"+R.drawable.t2_1_10+");");
+        db.execSQL(T2_B+ "11,1,11,'Moller',0,"+R.drawable.t2_1_11+");");
+        db.execSQL(T2_B+ "12,1,12,'Kommich',0,"+R.drawable.t2_1_12+");");
+        db.execSQL(T2_B+ "13,1,13,'Ceman',0,"+R.drawable.t2_1_13+");");
+        db.execSQL(T2_B+ "14,1,14,'Tolasso',0,"+R.drawable.t2_1_14+");");
+        db.execSQL(T2_B+ "15,1,15,'Rady',0,"+R.drawable.t2_1_15+");");
+
 
 
 
@@ -102,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return arrayDeque;
     }
 
-    public ArrayDeque<Card> allFromColection(int IDcol){ //List of cards in one collection
+    public ArrayDeque<Card> allFromColection(int IDcol){ //List of cards in one collection TODO: REPAIR IT FOR NEW VERSION OF DATABASE!
         ArrayDeque<Card> arrayDeque=new ArrayDeque<>();
         SQLiteDatabase db=getReadableDatabase();
         final String query="SELECT * FROM "+TABLE2_NAME+" WHERE "+T2_COL1+" = "+IDcol+";";
@@ -113,18 +114,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return arrayDeque;
     }
-    public ArrayDeque<String> allCollectionsOfCategory(int IDcat){ //List of collections in one category
-        ArrayDeque<String> arrayDeque= new ArrayDeque<>();
+    public ArrayDeque<Collection> allCollectionsOfCategory(int IDcat){ //List of collections in one category
+        ArrayDeque<Collection> arrayDeque= new ArrayDeque<>();
         SQLiteDatabase db=getReadableDatabase();
-        final String query="SELECT "+T1_COL2+" FROM "+TABLE_NAME+" WHERE "+T1_COL3+" ="+IDcat+";";
+        final String query="SELECT * FROM "+TABLE_NAME+" WHERE "+T1_COL3+" ="+IDcat+";";
         Cursor cursor=db.rawQuery(query,null);
         while(cursor.moveToNext()){
-            arrayDeque.add(cursor.getString(0));
+            Collection col=new Collection(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getInt(3),cursor.getInt(4));
+            arrayDeque.add(col);
         }
         db.close();
         return arrayDeque;
     }
 
+    //TMP:
+    public int getCardImage(int idCard){
 
+        SQLiteDatabase db=getReadableDatabase();
+        final String query="SELECT "+T2_COL5+" FROM "+TABLE2_NAME+" WHERE "+T2_COL2+" ="+idCard+";";
+        Cursor cursor=db.rawQuery(query,null);
+        cursor.moveToNext();
+        int image=cursor.getInt(0);
+
+        db.close();
+        return image;
+    }
 
 }

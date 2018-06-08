@@ -17,6 +17,7 @@ public class F2_shop_opening extends Fragment {
         TextView name=view.findViewById(R.id.newCardName);
         ImageView image=view.findViewById(R.id.newCardImage);
 
+
         Randomizer randomizer=new Randomizer();
         int result=randomizer.opening(2); //TODO: zmiana id kolekcji
 

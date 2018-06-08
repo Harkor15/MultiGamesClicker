@@ -10,7 +10,15 @@ public class Card {
     String name;
     int amount;
 
-    public Card(int _ID_collection,int _ID_card,String _name,int _amount) {
+    public int getAmount() {
+        return amount;
+    }
+
+    public int getID_card() {
+        return ID_card;
+    }
+
+    public Card(int _ID_collection, int _ID_card, String _name, int _amount) {
         ID_collection = _ID_collection;
         ID_card = _ID_card;
         name = _name;

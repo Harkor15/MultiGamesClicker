@@ -35,7 +35,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        //SQLiteDatabase db=this.getWritableDatabase();
     }
 
     @Override
@@ -91,6 +90,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return cursor.getInt(0);
     }
+    public String getCollectionName(int idColelction){
+        SQLiteDatabase db=getReadableDatabase();
+        final String query="SELECT "+T1_COL2+" FROM "+TABLE_NAME+" WHERE "+T1_COL1+" = "+idColelction+";";
+        Cursor cursor=db.rawQuery(query,null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
     public ArrayDeque<String> allCollections(){ //List of collections
         ArrayDeque<String> arrayDeque= new ArrayDeque<>();
         SQLiteDatabase db=getReadableDatabase();
@@ -109,7 +115,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String query="SELECT * FROM "+TABLE2_NAME+" WHERE "+T2_COL1+" = "+IDcol+";";
         Cursor cursor=db.rawQuery(query,null);
         while(cursor.moveToNext()){
-            Card card=new Card(cursor.getInt(1),cursor.getInt(2),cursor.getString(3),cursor.getInt(4));
+            Card card=new Card(cursor.getInt(1),cursor.getInt(2),cursor.getString(3),cursor.getInt(4),cursor.getInt(5));
             arrayDeque.add(card);
         }
         return arrayDeque;

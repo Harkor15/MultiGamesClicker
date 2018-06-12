@@ -24,4 +24,6 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="skip">Skip</string>
+    <string name="football" >Football</string>
+    <string name="my_collection">My collection</string>
 </resources>

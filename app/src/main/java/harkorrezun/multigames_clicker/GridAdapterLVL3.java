@@ -54,8 +54,8 @@ public class GridAdapterLVL3 extends BaseAdapter{
         TextView textView=gridView.findViewById(R.id.cardName);
         TextView amountView=gridView.findViewById(R.id.cardAmount);
         imageView.setImageResource(images[i]);
-        textView.setText(names[i]);
-        amountView.setText(amount[i]+"");
+        textView.setText("x"+amount[i]);
+        amountView.setText("");
 
         return gridView;
     }

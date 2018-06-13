@@ -21,20 +21,14 @@ public class F4_collection extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.f4_collection,container,false);
         ConstraintLayout c1=view.findViewById(R.id.cat1);
-        ConstraintLayout c2=view.findViewById(R.id.cat2);
+       //ConstraintLayout c2=view.findViewById(R.id.cat2);
 
 
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                open(1);
-            }
-        });
-        c2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                open(2);
+                open(1,getResources().getString(R.string.football));
             }
         });
 
@@ -45,12 +39,13 @@ public class F4_collection extends Fragment {
         return view;
     }
 
-    public void open(int id){
+    public void open(int id,String name){
         FragmentManager fm=getFragmentManager();
         FragmentTransaction fragmentTransaction;
         Fragment fragment = new F4_collection_lvl2();
         Bundle bundle=new Bundle();
         bundle.putInt("category",id);
+        bundle.putString("categoryName",name);
         fragment.setArguments(bundle);
         fragmentTransaction=fm.beginTransaction();
         fragmentTransaction.replace(R.id.rightContent,fragment);

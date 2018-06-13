@@ -1,16 +1,26 @@
 package harkorrezun.multigames_clicker;
 
+import android.content.Context;
+import android.util.Log;
+
 import java.util.Random;
 
 public class Randomizer {
     private static int[] lvls={1,3,6,10,15,21,28,36,45,55,66,78,91,105,120};
+    private Context context;
 
+
+    public Randomizer(Context context){
+        this.context=context;
+    }
 
     public int opening(int collection){
         Random random=new Random();
         int ran=random.nextInt();
+        ran=Math.abs(ran);
         ran%=lvls[14];
         ran++;
+        Log.d("ran",ran+"");
         int result;
         if(ran>lvls[13]){
             result=15;
@@ -44,8 +54,8 @@ public class Randomizer {
             result=1;
         }
 
-        //TODO: ADD RESULT CARD TO DATABASE
-
+        DatabaseHelper databaseHelper=new DatabaseHelper(context);
+        databaseHelper.addNewCard(collection,result);
         return result;
     }
 }

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="Collection"
+        android:text="@string/my_collection"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,26 +41,27 @@
                 app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageCat1"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
+                    android:contentDescription="@string/football"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewCat1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mar" />
+                    app:srcCompat="@drawable/football" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/textViewCat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Metin2"
+                    android:text="@string/football"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageCat1" />
 
             </android.support.constraint.ConstraintLayout>
 

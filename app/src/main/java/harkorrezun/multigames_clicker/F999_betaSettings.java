@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class F999_betaSettings extends  Fragment {
 SharedPreferences sharedPreferences;
@@ -39,6 +40,8 @@ Button save;
                 editor.commit();
             }
         });
+
+
 
 
         return view;

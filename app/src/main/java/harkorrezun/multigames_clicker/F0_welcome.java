@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import pl.droidsonroids.gif.GifTextView;
+
 /**
  * Created by Harkor on 2018-03-26.
  */
@@ -17,6 +19,9 @@ public class F0_welcome extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.f0_welcome,container,false);
+
+
+
         return view;
     }
 }

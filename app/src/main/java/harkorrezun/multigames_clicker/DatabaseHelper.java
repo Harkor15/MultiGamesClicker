@@ -134,16 +134,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //TMP:
-    public int getCardImage(int idCard){
+    public Card getCard(int idCard,int idCollection){
+/*
+  public static final String T2_COL0 ="_ID";
+    public static final String T2_COL1 ="ID_COLLECTION"; 1
+    public static final String T2_COL2 ="ID_CARD";2
+    public static final String T2_COL3 ="NAME";3
+    public static final String T2_COL4 ="AMOUNT";4
+    public static final String T2_COL5 ="IMAGE";5
 
+ */
         SQLiteDatabase db=getReadableDatabase();
-        final String query="SELECT "+T2_COL5+" FROM "+TABLE2_NAME+" WHERE "+T2_COL2+" ="+idCard+";";
+        final String query="SELECT * FROM "+TABLE2_NAME+" WHERE "+T2_COL2+" ="+idCard+" AND "+T2_COL1+"="+idCollection+";";
         Cursor cursor=db.rawQuery(query,null);
         cursor.moveToNext();
-        int image=cursor.getInt(0);
+        Card card=new Card(cursor.getInt(1),cursor.getInt(2),cursor.getString(3),cursor.getInt(4),cursor.getInt(5));
 
         db.close();
-        return image;
+        return card;
     }
 
 }

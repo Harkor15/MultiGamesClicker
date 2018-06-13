@@ -23,18 +23,19 @@ public class F2_shop extends Fragment{
         scat1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toCategory(1);
+                toCategory(1,R.string.football);
             }
         });
         return view;
     }
 
-    public void toCategory(int idCategory){
+    public void toCategory(int idCategory,int nameCategory){
         Fragment fragment =new F2_shop_lvl2();
         FragmentManager fragmentManager=getFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Bundle bundle=new Bundle();
         bundle.putInt("idCategory",idCategory);
+        bundle.putString("nameCategory",getResources().getString(nameCategory));
         fragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.rightContent,fragment);
         fragmentTransaction.commit();

@@ -16,13 +16,15 @@ public class F2_shop_opening extends Fragment {
         View view=inflater.inflate(R.layout.f2_shop_opening,container,false);
         TextView name=view.findViewById(R.id.newCardName);
         ImageView image=view.findViewById(R.id.newCardImage);
-
-
+        Bundle arguments=getArguments();
+        int collectionId=arguments.getInt("collection");
         Randomizer randomizer=new Randomizer(getContext());
-        int result=randomizer.opening(2); //TODO: zmiana id kolekcji
-
-        //TMP:
-        name.setText("You won card: "+result);
+        int result=randomizer.opening(collectionId);
+        DatabaseHelper db=new DatabaseHelper(getContext());
+        Card card=db.getCard(result,collectionId);
+        db.addNewCard(collectionId,result);
+        name.setText(card.name+"");
+        image.setImageResource(card.image);
 
         return view;
     }

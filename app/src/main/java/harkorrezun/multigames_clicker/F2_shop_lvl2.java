@@ -6,7 +6,9 @@ package harkorrezun.multigames_clicker;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,19 +29,12 @@ import java.util.Locale;
 
 public class F2_shop_lvl2 extends Fragment {
     GridView gridView;
-
-    //Tmp
-    //String names[]={"abc","cba"};
-    //int images[]={R.drawable.mar,R.drawable.mar};
-    //int prices[]={100,150};
+    ArrayDeque<Collection> collectionArrayDeque;
 
 
 
 
-
-
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         final View view =inflater.inflate(R.layout.f2_shop_lvl2, container, false);
         gridView=view.findViewById(R.id.shop2GridView);
 
@@ -47,8 +42,10 @@ public class F2_shop_lvl2 extends Fragment {
 
         Bundle arguments = getArguments();
         int category = arguments.getInt("idCategory");
+        String nameCategory=arguments.getString("nameCategory");
         DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
         ArrayDeque<Collection> arrayDeque=databaseHelper.allCollectionsOfCategory(category);
+        collectionArrayDeque=arrayDeque.clone();
         int size=arrayDeque.size();
         String names[]=new String[size];
         int images[]=new int[size];
@@ -69,7 +66,7 @@ public class F2_shop_lvl2 extends Fragment {
 
         gridView.setNumColumns(4);
         TextView textView=view.findViewById(R.id.categoryName);
-        textView.setText("Category: "+category);
+        textView.setText(nameCategory);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -89,9 +86,16 @@ public class F2_shop_lvl2 extends Fragment {
                             hideBar();
                             FragmentManager fragmentManager=getFragmentManager();
                             Fragment fragment=new F2_shop_opening();
-                            //Bundle bundle=new Bundle();
-                            //bundle.putInt("",);
-                            //fragment.setArguments(bundle);
+                            Bundle bundle=new Bundle();
+                            Collection colPicked=collectionPicked(i);
+                            SharedPreferences sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
+                            int carrots=sharedPreferences.getInt("carrots",0);
+                            carrots-=colPicked.getPrice();
+                            SharedPreferences.Editor editor=sharedPreferences.edit();
+                            editor.putInt("carrots",carrots);
+                            editor.commit();
+                            bundle.putInt("collection",colPicked.getId());
+                            fragment.setArguments(bundle);
                             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.rightContent,fragment);
                             fragmentTransaction.commit();
@@ -127,5 +131,12 @@ public class F2_shop_lvl2 extends Fragment {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+    private Collection collectionPicked(int i){
+        for(int j=0;j<i;j++){
+            collectionArrayDeque.removeFirst();
+        }
+        Collection coll=collectionArrayDeque.pollFirst();
+        return coll;
     }
 }

@@ -44,21 +44,6 @@ Button save;
 
 
 
-
-        //TMP: test:
-        ImageView imageView=view.findViewById(R.id.imageTests);
-        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
-        int image=databaseHelper.getCardImage(5);
-        imageView.setImageResource(image);
-
-
-
-
-
-
-
-
-
         return view;
     }
 

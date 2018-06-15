@@ -26,4 +26,6 @@
     <string name="skip">Skip</string>
     <string name="football" >Football</string>
     <string name="my_collection">My collection</string>
+    <string name="upgrades" >Upgrades</string>
+    <string name="noMoney">You need more carrots!</string>
 </resources>

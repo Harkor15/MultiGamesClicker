@@ -14,32 +14,24 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayDeque;
-import java.util.Locale;
 
 
-public class F2_shop_lvl2 extends Fragment {
+public class F2shop2Fragment extends Fragment {
     GridView gridView;
     ArrayDeque<Collection> collectionArrayDeque;
 
-
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
-        final View view =inflater.inflate(R.layout.f2_shop_lvl2, container, false);
+        final View view =inflater.inflate(R.layout.fragment_f2_shop2, container, false);
         gridView=view.findViewById(R.id.shop2GridView);
-
-
-
         Bundle arguments = getArguments();
         int category = arguments.getInt("idCategory");
         String nameCategory=arguments.getString("nameCategory");
@@ -56,14 +48,9 @@ public class F2_shop_lvl2 extends Fragment {
             images[i]=col.getImage();
             prices[i]=col.getPrice();
         }
-
-        //TMP:
-        Log.d("lmage",""+images[0]);
         final int prices2[]=prices;
-
-        GridAdapterShop2 adapter=new GridAdapterShop2(getContext(),names,images,prices);
+        GridShop2Adapter adapter=new GridShop2Adapter(getContext(),names,images,prices);
         gridView.setAdapter(adapter);
-
         gridView.setNumColumns(4);
         TextView textView=view.findViewById(R.id.categoryName);
         textView.setText(nameCategory);
@@ -71,54 +58,52 @@ public class F2_shop_lvl2 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             String mess=getResources().getString(R.string.wannaBuy);
-            new AlertDialog.Builder(getContext())
-                    .setTitle(R.string.buy)
-                    .setMessage(mess+" "+prices2[i]+"?")
-                    .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            hideBar();
-                        }
-                    })
-                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            hideBar();
-                            FragmentManager fragmentManager=getFragmentManager();
-                            Fragment fragment=new F2_shop_opening();
-                            Bundle bundle=new Bundle();
-                            Collection colPicked=collectionPicked(i);
-                            SharedPreferences sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
-                            int carrots=sharedPreferences.getInt("carrots",0);
-                            carrots-=colPicked.getPrice();
-                            SharedPreferences.Editor editor=sharedPreferences.edit();
-                            editor.putInt("carrots",carrots);
-                            editor.commit();
-                            bundle.putInt("collection",colPicked.getId());
-                            fragment.setArguments(bundle);
-                            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.rightContent,fragment);
-                            fragmentTransaction.commit();
-
-
-                            //TODO: take money and give card;
-
-                        }
-                    })
-                    .setOnCancelListener(new DialogInterface.OnCancelListener() {
-                        @Override
-                        public void onCancel(DialogInterface dialogInterface) {
-                            hideBar();
-                        }
-                    }).create().show();
-
+                final SharedPreferences sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
+                final int carrots1=sharedPreferences.getInt("carrots",0);
+            if(carrots1>prices2[i]) {
+                new AlertDialog.Builder(getContext())
+                        .setTitle(R.string.buy)
+                        .setMessage(mess + " " + prices2[i] + "?")
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                hideBar();
+                            }
+                        })
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                hideBar();
+                                FragmentManager fragmentManager = getFragmentManager();
+                                Fragment fragment = new F2shopOpeningFragment();
+                                Bundle bundle = new Bundle();
+                                Collection colPicked = collectionPicked(i);
+                                int carrots = carrots1;
+                                carrots -= colPicked.getPrice();
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putInt("carrots", carrots);
+                                editor.commit();
+                                bundle.putInt("collection", colPicked.getId());
+                                fragment.setArguments(bundle);
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.rightContent, fragment);
+                                fragmentTransaction.commit();
+                            }
+                        })
+                        .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialogInterface) {
+                                hideBar();
+                            }
+                        }).create().show();
+            }else{
+                Toast.makeText(getContext(),R.string.noMoney,Toast.LENGTH_SHORT).show();
+            }
             hideBar();
-
             }
         });
         return view;
     }
-
     private void hideBar(){
         Activity activity=getActivity();
         View decorView = activity.getWindow().getDecorView();

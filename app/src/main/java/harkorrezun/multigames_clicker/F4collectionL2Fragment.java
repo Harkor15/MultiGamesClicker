@@ -7,23 +7,21 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayDeque;
 
-public class F4_collection_lvl2 extends Fragment {
+public class F4collectionL2Fragment extends Fragment {
     ArrayDeque<Collection>collectionArrayDeque;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.f4_collection_lvl2,container,false);
+        View view= inflater.inflate(R.layout.fragment_f4_collection_l2,container,false);
         Bundle arguments = getArguments();
         int category = arguments.getInt("category");
         String categoryName=arguments.getString("categoryName");
@@ -41,7 +39,7 @@ public class F4_collection_lvl2 extends Fragment {
             images[i]=col.getImage();
         }
         GridView gridView=view.findViewById(R.id.gridViewLVL2);
-        GridAdapterLVL2 gridAdapter=new GridAdapterLVL2(getContext(),images,names);
+        GridL2Adapter gridAdapter=new GridL2Adapter(getContext(),images,names);
         gridView.setNumColumns(3);
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,11 +50,10 @@ public class F4_collection_lvl2 extends Fragment {
         });
         return view;
     }
-
     private void enterCollection(int colId){
         FragmentManager fragmentManager=getFragmentManager();
         FragmentTransaction fragmentTransaction;
-        Fragment fragment=new F4_collection_lvl3();
+        Fragment fragment=new F4collectionL3Fragment();
         Bundle bundle=new Bundle();
         bundle.putInt("collection",colId);
         fragment.setArguments(bundle);
@@ -67,10 +64,8 @@ public class F4_collection_lvl2 extends Fragment {
     private int idCollecionClicked(int clickID){
         for(int j=0;j<clickID;j++){
             collectionArrayDeque.removeFirst();
-
         }
         Collection coll=collectionArrayDeque.pollFirst();
         return coll.getId();
     }
-
 }

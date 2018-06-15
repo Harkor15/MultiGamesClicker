@@ -1,7 +1,5 @@
 package harkorrezun.multigames_clicker;
 
-import android.app.Activity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,7 +13,6 @@ import android.widget.Button;
  * Created by Harkor on 2018-03-22.
  */
 
-
 public class MenuFragment extends Fragment{
     Button btn1;
     Button btn2;
@@ -23,7 +20,6 @@ public class MenuFragment extends Fragment{
     Button btn4;
     Button btn5;
     Button btn6;
-
     MenuFragmentListener activityComander;
     public interface MenuFragmentListener{
          void changeContent(int fragNr);
@@ -42,8 +38,7 @@ public class MenuFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.menu_fragment,container,false);
-
+        View view=inflater.inflate(R.layout.fragment_menu,container,false);
         btn1= view.findViewById(R.id.clicker);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +81,6 @@ public class MenuFragment extends Fragment{
                 activityComander.changeContent(6);
             }
         });
-
-
         return view;
     }
 

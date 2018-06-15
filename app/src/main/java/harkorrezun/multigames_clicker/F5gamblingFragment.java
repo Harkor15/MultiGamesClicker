@@ -1,6 +1,5 @@
 package harkorrezun.multigames_clicker;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,14 +15,12 @@ import android.widget.Button;
  * Created by Harkor on 2018-04-04.
  */
 
-public class F5_gambling extends Fragment {
+public class F5gamblingFragment extends Fragment {
     Button rulette;
     Button sapper;
     Button crash;
     Button cards;
-
     GamblingFragmentListener activityComanderr;
-
     public interface GamblingFragmentListener{
         void toGambling(int gID);
     }
@@ -37,11 +34,10 @@ public class F5_gambling extends Fragment {
             throw new ClassCastException(context.toString());
         }
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.f5_gambling,container,false);
+        View view= inflater.inflate(R.layout.fragment_f5_gambling,container,false);
         rulette=view.findViewById(R.id.rulette);
         rulette.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +66,6 @@ public class F5_gambling extends Fragment {
                 activityComanderr.toGambling(4);
             }
         });
-
         return view;
     }
 }

@@ -15,7 +15,7 @@ import android.widget.TextView;
  * Created by Harkor on 2018-04-04.
  */
 
-public class G4_cards extends Fragment {
+public class G4cardsFragment extends Fragment {
     int amount;
     SeekBar seekBar;
     TextView amountV,seekNumber;
@@ -24,7 +24,7 @@ public class G4_cards extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.g4_cards,container,false);
+        View view= inflater.inflate(R.layout.fragment_g4_cards,container,false);
         amountV=view.findViewById(R.id.amount);
         seekBar=view.findViewById(R.id.seekBar);
         seekNumber=view.findViewById(R.id.seekNumber);
@@ -34,6 +34,7 @@ public class G4_cards extends Fragment {
         amountV.setText(amount+"");
         seekBar.setMax(amount);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
             seekNumber.setText(seekBar.getProgress()+"");
@@ -41,15 +42,12 @@ public class G4_cards extends Fragment {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
-
         return view;
     }
 

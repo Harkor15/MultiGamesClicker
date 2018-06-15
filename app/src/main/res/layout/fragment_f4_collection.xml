@@ -35,7 +35,6 @@
                 android:id="@+id/cat1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="cat1"
                 app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
                 app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
                 app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
@@ -69,7 +68,6 @@
                 android:id="@+id/cat2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="cat2"
                 app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
                 app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
                 app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">

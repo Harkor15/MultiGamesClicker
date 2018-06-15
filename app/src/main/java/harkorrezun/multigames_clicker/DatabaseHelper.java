@@ -1,5 +1,4 @@
 package harkorrezun.multigames_clicker;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,8 +9,6 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
-
-
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME ="Cards.db";
     public static final String TABLE_NAME ="Colections";
@@ -30,13 +27,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String T2_COL4 ="AMOUNT";
     public static final String T2_COL5 ="IMAGE";
 
-
-
-
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
           final String T1_B="INSERT INTO "+TABLE_NAME+" ("+T1_COL1+", "+ T1_COL2+", "+T1_COL3+", "+T1_COL4+", "+T1_COL5+") VALUES (";
@@ -44,7 +37,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     db.execSQL("create table "+ TABLE_NAME+" ("+T1_COL1+" INTEGER PRIMARY KEY, "+T1_COL2+" TEXT,"+T1_COL3+" INTEGER,"+T1_COL4+" INTEGER,"+T1_COL5+" INT);");
     db.execSQL("create table "+ TABLE2_NAME+" ("+T2_COL0+" INTEGER PRIMARY KEY,"+T2_COL1+" INTEGER, "+T2_COL2+" INTEGER, "+T2_COL3+" TEXT, "+T2_COL4+" INTEGER,"+T2_COL5+" INT);");
-
         db.execSQL(T1_B+ "1,'Brayan Machen',1, 250,"+R.drawable.t1_1+");");
         db.execSQL(T2_B+ "1,1,1,'Lewndowsky',0,"+R.drawable.t2_1_1+");");
         db.execSQL(T2_B+ "2,1,2,'Hammers',0,"+R.drawable.t2_1_2+");");
@@ -61,19 +53,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(T2_B+ "13,1,13,'Ceman',0,"+R.drawable.t2_1_13+");");
         db.execSQL(T2_B+ "14,1,14,'Tolasso',0,"+R.drawable.t2_1_14+");");
         db.execSQL(T2_B+ "15,1,15,'Rady',0,"+R.drawable.t2_1_15+");");
-
-
-
-
-
-    Log.d("DB","CREATED");
+         Log.d("DB","CREATED");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
     // UPGRADE IN NEXT VER
     }
-
     public void addNewCard(int IDcol,int IDcard){
         SQLiteDatabase db=getWritableDatabase();
         final String query="UPDATE Cards SET AMOUNT = AMOUNT+1 WHERE ID_COLLECTION = "+IDcol+" AND ID_CARD = "+IDcard+";";
@@ -84,7 +70,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int howMany(int IDcol, int IDcard){
         SQLiteDatabase db=getWritableDatabase();
         final String query="SELECT "+T2_COL4+" FROM "+TABLE2_NAME+" WHERE "+T2_COL1+"="+IDcol+" AND "+T2_COL2+"="+IDcard+";";
-
         Cursor cursor=db.rawQuery(query,null);
         cursor.moveToFirst();
         db.close();
@@ -108,7 +93,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return arrayDeque;
     }
-
     public ArrayDeque<Card> allFromColection(int IDcol){ //List of cards in one collection TODO: REPAIR IT FOR NEW VERSION OF DATABASE!
         ArrayDeque<Card> arrayDeque=new ArrayDeque<>();
         SQLiteDatabase db=getReadableDatabase();
@@ -132,26 +116,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return arrayDeque;
     }
-
-    //TMP:
     public Card getCard(int idCard,int idCollection){
-/*
-  public static final String T2_COL0 ="_ID";
-    public static final String T2_COL1 ="ID_COLLECTION"; 1
-    public static final String T2_COL2 ="ID_CARD";2
-    public static final String T2_COL3 ="NAME";3
-    public static final String T2_COL4 ="AMOUNT";4
-    public static final String T2_COL5 ="IMAGE";5
-
- */
         SQLiteDatabase db=getReadableDatabase();
         final String query="SELECT * FROM "+TABLE2_NAME+" WHERE "+T2_COL2+" ="+idCard+" AND "+T2_COL1+"="+idCollection+";";
         Cursor cursor=db.rawQuery(query,null);
         cursor.moveToNext();
         Card card=new Card(cursor.getInt(1),cursor.getInt(2),cursor.getString(3),cursor.getInt(4),cursor.getInt(5));
-
         db.close();
         return card;
+    }
+    public int getCategory(int idCollection){
+        SQLiteDatabase db=getReadableDatabase();
+        final String query="SELECT "+T1_COL3+" FROM "+TABLE_NAME+" WHERE "+T1_COL1+"="+idCollection+";";
+        Cursor cursor=db.rawQuery(query,null);
+        cursor.moveToFirst();
+        return cursor.getInt(0);
     }
 
 }

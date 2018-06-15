@@ -9,7 +9,6 @@ public class Randomizer {
     private static int[] lvls={1,3,6,10,15,21,28,36,45,55,66,78,91,105,120};
     private Context context;
 
-
     public Randomizer(Context context){
         this.context=context;
     }
@@ -53,7 +52,6 @@ public class Randomizer {
         }else{
             result=1;
         }
-
         DatabaseHelper databaseHelper=new DatabaseHelper(context);
         databaseHelper.addNewCard(collection,result);
         return result;

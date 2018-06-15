@@ -9,40 +9,31 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 /**
  * Created by Harkor on 2018-04-04.
  */
 
-public class F4_collection extends Fragment {
+public class F4collectionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.f4_collection,container,false);
+        View view= inflater.inflate(R.layout.fragment_f4_collection,container,false);
         ConstraintLayout c1=view.findViewById(R.id.cat1);
-       //ConstraintLayout c2=view.findViewById(R.id.cat2);
-
-
-
-        c1.setOnClickListener(new View.OnClickListener() {
+        ConstraintLayout c2=view.findViewById(R.id.cat2);
+                c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 open(1,getResources().getString(R.string.football));
             }
         });
 
-
-
-
-
         return view;
     }
-
     public void open(int id,String name){
         FragmentManager fm=getFragmentManager();
         FragmentTransaction fragmentTransaction;
-        Fragment fragment = new F4_collection_lvl2();
+        Fragment fragment = new F4collectionL2Fragment();
         Bundle bundle=new Bundle();
         bundle.putInt("category",id);
         bundle.putString("categoryName",name);
@@ -51,6 +42,4 @@ public class F4_collection extends Fragment {
         fragmentTransaction.replace(R.id.rightContent,fragment);
         fragmentTransaction.commit();
     }
-
-
 }

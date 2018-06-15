@@ -8,20 +8,18 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GridAdapterShop2 extends BaseAdapter {
-    private Context context;
-    private String names[];
+public class GridL2Adapter extends BaseAdapter {
     private int images[];
-    private int prices[];
+    private String names[];
+    private Context context;
     private LayoutInflater inflater;
 
-    public GridAdapterShop2(Context context, String names1[],int images1[],int prices1[]){
-        this.context=context;
-        this.names=names1;
-        this.images=images1;
-        this.prices=prices1;
-
+    public GridL2Adapter(Context context, int images[], String names[]){
+    this.context=context;
+    this.images=images;
+    this.names=names;
     }
+
     @Override
     public int getCount() {
         return names.length;
@@ -39,19 +37,15 @@ public class GridAdapterShop2 extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
         View gridView=view;
         if(view==null){
             inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            gridView=inflater.inflate(R.layout.one_collection_shop,null);
+            gridView=inflater.inflate(R.layout.one_collection,null);
         }
-        TextView name=gridView.findViewById(R.id.shop2_name);
-        ImageView image=gridView.findViewById(R.id.shop2_image);
-        TextView price=gridView.findViewById(R.id.shop2_price);
-        name.setText(names[i]);
-        image.setImageResource(images[i]);
-        price.setText(prices[i]+"");
-
+        ImageView imageView=gridView.findViewById(R.id.colImage);
+        TextView textView=gridView.findViewById(R.id.colName);
+        imageView.setImageResource(images[i]);
+        textView.setText(names[i]);
         return gridView;
     }
 }

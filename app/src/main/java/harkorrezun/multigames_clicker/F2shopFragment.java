@@ -14,11 +14,11 @@ import android.view.ViewGroup;
  * Created by Harkor on 2018-03-26.
  */
 
-public class F2_shop extends Fragment{
+public class F2shopFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.f2_shop,container,false);
+        View view= inflater.inflate(R.layout.fragment_f2_shop,container,false);
         ConstraintLayout scat1=view.findViewById(R.id.scat1);
         scat1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,9 +28,8 @@ public class F2_shop extends Fragment{
         });
         return view;
     }
-
     public void toCategory(int idCategory,int nameCategory){
-        Fragment fragment =new F2_shop_lvl2();
+        Fragment fragment =new F2shop2Fragment();
         FragmentManager fragmentManager=getFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Bundle bundle=new Bundle();

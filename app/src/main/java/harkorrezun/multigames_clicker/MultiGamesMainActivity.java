@@ -7,10 +7,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 import android.support.v4.app.FragmentTransaction;
 
-public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.MenuFragmentListener, F5_gambling.GamblingFragmentListener {
+public class MultiGamesMainActivity extends AppCompatActivity implements MenuFragment.MenuFragmentListener, F5gamblingFragment.GamblingFragmentListener {
     DatabaseHelper myDb;
     View mDecorView;
     FragmentManager fragmentManager;
@@ -36,34 +35,32 @@ public class MultiGamesMAIN extends AppCompatActivity implements MenuFragment.Me
         changeContent(0);
     }
 
-
     @Override
     public void changeContent(int fragNr) {
         Fragment fragment;
         switch(fragNr){
-            case 1: fragment=new F1_clicker(); break;
-            case 2: fragment=new F2_shop(); break;
-            case 3: fragment=new F3_oppening(); break;
-            case 4: fragment=new F4_collection(); break;
-            case 5: fragment=new F5_gambling(); break;
-            case 6: fragment=new F999_betaSettings(); break;
-            default: fragment=new F0_welcome();break;
+            case 1: fragment=new F1clickerFragment(); break;
+            case 2: fragment=new F2shopFragment(); break;
+            case 3: fragment=new F3UpgradesFragment(); break;
+            case 4: fragment=new F4collectionFragment(); break;
+            case 5: fragment=new F5gamblingFragment(); break;
+            case 6: fragment=new F999betaSettingsFragment(); break;
+            default: fragment=new F0welcomeFragment();break;
         }
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentContent");
         fragmentTransaction.commit();
-
     }
 
     @Override
     public void toGambling(int gID) {
         Fragment fragment;
         switch(gID){
-            case 1: fragment=new G1_rulette(); break;
-            case 2: fragment=new G2_sapper(); break;
-            case 3: fragment=new G3_crash(); break;
-            case 4: fragment=new G4_cards(); break;
-            default: fragment=new G1_rulette(); break;
+            case 1: fragment=new G1ruletteFragment(); break;
+            case 2: fragment=new G2sapperFragment(); break;
+            case 3: fragment=new G3crashFragment(); break;
+            case 4: fragment=new G4cardsFragment(); break;
+            default: fragment=new G1ruletteFragment(); break;
         }
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.rightContent,fragment,"FragmentGambling");

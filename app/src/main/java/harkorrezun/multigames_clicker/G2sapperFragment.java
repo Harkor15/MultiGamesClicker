@@ -11,11 +11,11 @@ import android.view.ViewGroup;
  * Created by Harkor on 2018-04-04.
  */
 
-public class G1_rulette extends Fragment {
+public class G2sapperFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.g1_rulette,container,false);
+        View view= inflater.inflate(R.layout.fragment_g2_sapper,container,false);
         return view;
     }
 }

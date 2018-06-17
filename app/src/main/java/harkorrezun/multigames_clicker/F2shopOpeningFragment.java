@@ -30,13 +30,24 @@ public class F2shopOpeningFragment extends Fragment {
         Drawable drawable=new Drawable();
         image.setImageResource(drawable.getCardImage(collectionId,result));
         Button skip_ok=view.findViewById(R.id.skip_ok);
+        final Collection collection=db.getCollection(collectionId);
         skip_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager=getFragmentManager();
+                /*FragmentManager fragmentManager=getFragmentManager();
                 Fragment fragment=new F2shopFragment();
                 FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.rightContent,fragment,"");
+                fragmentTransaction.commit();
+                */
+                Fragment fragment =new F2shop2Fragment();
+                FragmentManager fragmentManager=getFragmentManager();
+                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                Bundle bundle=new Bundle();
+                bundle.putInt("idCategory",collectionId);
+                bundle.putString("nameCategory",getResources().getString(collection.getCategoryName()));
+                fragment.setArguments(bundle);
+                fragmentTransaction.replace(R.id.rightContent,fragment);
                 fragmentTransaction.commit();
             }
         });

@@ -61,7 +61,7 @@ public class F2shop2Fragment extends Fragment {
                 final SharedPreferences sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
                 final int carrots1=sharedPreferences.getInt("carrots",0);
             if(carrots1>prices2[i]) {
-                new AlertDialog.Builder(getContext())
+                /*new AlertDialog.Builder(getContext())
                         .setTitle(R.string.buy)
                         .setMessage(mess + " " + prices2[i] + "?")
                         .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
@@ -74,6 +74,7 @@ public class F2shop2Fragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 hideBar();
+                                */
                                 FragmentManager fragmentManager = getFragmentManager();
                                 Fragment fragment = new F2shopOpeningFragment();
                                 Bundle bundle = new Bundle();
@@ -88,7 +89,7 @@ public class F2shop2Fragment extends Fragment {
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.rightContent, fragment);
                                 fragmentTransaction.commit();
-                            }
+                            /*}
                         })
                         .setOnCancelListener(new DialogInterface.OnCancelListener() {
                             @Override
@@ -96,15 +97,16 @@ public class F2shop2Fragment extends Fragment {
                                 hideBar();
                             }
                         }).create().show();
+                        */
             }else{
                 Toast.makeText(getContext(),R.string.noMoney,Toast.LENGTH_SHORT).show();
             }
-            hideBar();
+            //hideBar();
             }
         });
         return view;
     }
-    private void hideBar(){
+   /* private void hideBar(){
         Activity activity=getActivity();
         View decorView = activity.getWindow().getDecorView();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -116,7 +118,7 @@ public class F2shop2Fragment extends Fragment {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
-    }
+    }*/
     private Collection collectionPicked(int i){
         for(int j=0;j<i;j++){
             collectionArrayDeque.removeFirst();

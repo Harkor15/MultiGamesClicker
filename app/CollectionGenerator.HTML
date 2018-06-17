@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>CG by Harkor</title>
+<link href='http://fonts.googleapis.com/css?family=Bangers&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<meta charset="UTF-8"/>
+<link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body bgcolor="#333333" style="color:white;">
+
+<h1 style="font-family: 'Bangers', sans-serif; text-align:center;">Code generator for MultiGamesClicker by HARKOR</h1>
+
+<form style="font-family: 'Bowlby One SC', sans-serif;">
+Collection id:<input type="text" id="id"/></br>  
+Collection name:<input type="text" id="name"/></br>  
+Collection price:<input type="text" id="price"/></br>  
+CateogryID:<input type="text" id="category"/></br></br></br>
+CARDS OF COLLECTION: </br>
+1		<input type="text" id="card1"/>	</br>
+2		<input type="text" id="card2"/>	</br>
+3		<input type="text" id="card3"/>	</br>
+4		<input type="text" id="card4"/>	</br>
+5		<input type="text" id="card5"/>	</br>
+6		<input type="text" id="card6"/>	</br>
+7		<input type="text" id="card7"/>	</br>
+8		<input type="text" id="card8"/>	</br>
+9		<input type="text" id="card9"/>	</br>
+10		<input type="text" id="card10"/>	</br>
+11		<input type="text" id="card11"/>	</br>
+12		<input type="text" id="card12"/>	</br>
+13		<input type="text" id="card13"/>	</br>
+14		<input type="text" id="card14"/>	</br>
+15		<input type="text" id="card15"/>	</br>
+
+<input type="reset" value="CLEAR"/>
+</form>
+<button onclick="functi()">GENERATE</button>
+
+<p id="result" color="white"> </p>
+
+<script>
+/*
+    public static final String T1_COL1 ="_ID";
+    public static final String T1_COL2 ="NAME";
+    public static final String T1_COL3 ="CATEGORY";
+
+    public static final String T2_COL0 ="_ID";
+    public static final String T2_COL1 ="ID_COLLECTION";
+    public static final String T2_COL2 ="ID_CARD";
+    public static final String T2_COL3 ="NAME";
+    public static final String T2_COL4 ="AMOUNT";
+*/
+
+
+
+//final String T1I1 =T1_B+ "1,'Vegetables',1);";
+//final String T2I1L1  =T2_B+ "1,1,1,'Golden Carrot',0);";
+/*
+function cardId(var numberCol,var numberCard){
+numberCol--;
+numberCol*=15;
+numberCol+=numberCard;
+return numberCol;
+}*/
+
+function functi(){
+
+var card_0_ID=document.getElementById("id").value;
+card_0_ID--;
+card_0_ID*=15;
+
+var collectionID=document.getElementById("id").value;
+
+
+	var text='db.execSQL(T1_B+ "'+ collectionID+',\''+document.getElementById("name").value+'\','+document.getElementById("category").value+', '+document.getElementById("price").value+'+");"); </br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',1,\''+document.getElementById("card1").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',2,\''+document.getElementById("card2").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',3,\''+document.getElementById("card3").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',4,\''+document.getElementById("card4").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',5,\''+document.getElementById("card5").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',6,\''+document.getElementById("card6").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',7,\''+document.getElementById("card7").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',8,\''+document.getElementById("card8").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',9,\''+document.getElementById("card9").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',10,\''+document.getElementById("card10").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',11,\''+document.getElementById("card11").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',12,\''+document.getElementById("card12").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',13,\''+document.getElementById("card13").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',14,\''+document.getElementById("card14").value+'\',0);");</br>'; card_0_ID++;
+	text+='db.execSQL(T2_B+ "'+card_0_ID+','+collectionID+',15,\''+document.getElementById("card15").value+'\',0);");</br>'; card_0_ID++;
+	
+	//document.write("asdfa");
+	document.getElementById("result").innerHTML = text;
+}
+
+</script>
+</body>
+</html>

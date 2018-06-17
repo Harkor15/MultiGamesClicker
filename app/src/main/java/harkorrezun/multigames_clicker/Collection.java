@@ -3,29 +3,33 @@ package harkorrezun.multigames_clicker;
 public class Collection {
     private int id;
     private String name;
-    private int IdCategory;
+    private int idCategory;
     private int price;
-    private int image;
-    public Collection(int id,String name,int categoryID, int price,int image){
+
+    public Collection(int id,String name,int categoryID, int price){
         this.id=id;
         this.name=name;
-        this.IdCategory=categoryID;
+        this.idCategory=categoryID;
         this.price=price;
-        this.image=image;
     }
+
     public String getName() {
         return name;
-    }
-    public int getImage() {
-        return image;
     }
     public int getPrice() {
         return price;
     }
     public int getcateogryID() {
-        return IdCategory;
+        return idCategory;
     }
     public int getId() {
         return id;
+    }
+    public int getCategoryName(){
+        switch (idCategory){
+            case 1: return R.string.football;
+
+            default:return R.string.football;
+        }
     }
 }

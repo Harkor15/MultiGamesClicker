@@ -33,10 +33,11 @@ public class F4collectionL2Fragment extends Fragment {
         int size=arrayDeque.size();
         String names[]=new String[size];
         int images[]=new int[size];
+        Drawable drawable=new Drawable();
         for(int i=0;i<size;i++){
             Collection col=arrayDeque.pollFirst();
             names[i]=col.getName();
-            images[i]=col.getImage();
+            images[i]=drawable.getCollectionImage(col.getId());
         }
         GridView gridView=view.findViewById(R.id.gridViewLVL2);
         GridL2Adapter gridAdapter=new GridL2Adapter(getContext(),images,names);

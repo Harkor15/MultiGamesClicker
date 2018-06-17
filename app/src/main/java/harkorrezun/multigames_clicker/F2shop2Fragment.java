@@ -1,9 +1,5 @@
 package harkorrezun.multigames_clicker;
 
-
-
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -24,7 +20,6 @@ import android.widget.Toast;
 
 import java.util.ArrayDeque;
 
-
 public class F2shop2Fragment extends Fragment {
     GridView gridView;
     ArrayDeque<Collection> collectionArrayDeque;
@@ -35,6 +30,10 @@ public class F2shop2Fragment extends Fragment {
         Bundle arguments = getArguments();
         int category = arguments.getInt("idCategory");
         String nameCategory=arguments.getString("nameCategory");
+        TextView amountView=view.findViewById(R.id.carrotAmount);
+        SharedPreferences sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
+        int amount=sharedPreferences.getInt("carrots",0);
+        amountView.setText(amount+"");
         DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
         ArrayDeque<Collection> arrayDeque=databaseHelper.allCollectionsOfCategory(category);
         collectionArrayDeque=arrayDeque.clone();
@@ -42,10 +41,11 @@ public class F2shop2Fragment extends Fragment {
         String names[]=new String[size];
         int images[]=new int[size];
         int prices[]=new int[size];
+        Drawable drawable=new Drawable();
         for(int i=0;i<size;i++){
             Collection col=arrayDeque.pollFirst();
             names[i]=col.getName();
-            images[i]=col.getImage();
+            images[i]=drawable.getCollectionImage(col.getId());//col.getImage();
             prices[i]=col.getPrice();
         }
         final int prices2[]=prices;

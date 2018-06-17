@@ -27,7 +27,8 @@ public class F2shopOpeningFragment extends Fragment {
         Card card=db.getCard(result,collectionId);
         db.addNewCard(collectionId,result);
         name.setText(card.name+"");
-        image.setImageResource(card.image);
+        Drawable drawable=new Drawable();
+        image.setImageResource(drawable.getCardImage(collectionId,result));
         Button skip_ok=view.findViewById(R.id.skip_ok);
         skip_ok.setOnClickListener(new View.OnClickListener() {
             @Override

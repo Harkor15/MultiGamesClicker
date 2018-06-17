@@ -28,4 +28,6 @@
     <string name="my_collection">My collection</string>
     <string name="upgrades" >Upgrades</string>
     <string name="noMoney">You need more carrots!</string>
+    <string name="upgraded">Upgraded!</string>
+    <string name="exaplmeAmount">150000</string>
 </resources>

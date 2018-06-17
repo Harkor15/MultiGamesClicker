@@ -27,10 +27,11 @@ public class F4collectionL3Fragment extends Fragment{
         String names[]=new String[length];
         int images[]=new int[length];
         int amount[]=new int[length];
+        Drawable drawable=new Drawable();
         for(int i=0;i<length;i++){
             Card card=arrayDeque.pollFirst();
             names[i]=card.name;
-            images[i]=card.image;
+            images[i]=drawable.getCardImage(collection,i+1);//card.image;
             amount[i]=card.amount;
         }
         GridView gridView=view.findViewById(R.id.gridViewLVL3);

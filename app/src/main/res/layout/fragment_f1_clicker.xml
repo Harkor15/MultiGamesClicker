@@ -163,7 +163,7 @@
 
     <ImageView
         android:id="@+id/carrot"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -175,6 +175,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carrotAmount"
         app:srcCompat="@drawable/mar" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/carrotAmount"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toEndOf="@+id/carrotAmount"
+        app:layout_constraintTop_toTopOf="@+id/carrotAmount"
+        app:srcCompat="@drawable/ic_carrot" />
 
 
 </android.support.constraint.ConstraintLayout>

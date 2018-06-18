@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 /**
@@ -16,10 +17,10 @@ import android.widget.Button;
  */
 
 public class F5gamblingFragment extends Fragment {
-    Button rulette;
-    Button sapper;
-    Button crash;
-    Button cards;
+    ImageView rulette;
+    ImageView sapper;
+    ImageView crash;
+    ImageView cards;
     GamblingFragmentListener activityComanderr;
     public interface GamblingFragmentListener{
         void toGambling(int gID);

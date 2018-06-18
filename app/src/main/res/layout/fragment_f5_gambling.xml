@@ -16,47 +16,131 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/rulette"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rulette"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/roulette"
         app:layout_constraintBottom_toTopOf="@+id/crash"
         app:layout_constraintEnd_toStartOf="@+id/saper"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Gambling" />
+        app:layout_constraintTop_toBottomOf="@+id/Gambling"
+        app:srcCompat="@drawable/roulette" />
 
-    <Button
+    <ImageView
         android:id="@+id/saper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/saper"
         app:layout_constraintBottom_toTopOf="@+id/cards"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/rulette"
-        app:layout_constraintTop_toBottomOf="@+id/Gambling" />
+        app:layout_constraintTop_toBottomOf="@+id/Gambling"
+        app:srcCompat="@drawable/saper" />
 
-    <Button
+    <ImageView
         android:id="@+id/crash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/crash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cards"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rulette" />
+        app:layout_constraintTop_toBottomOf="@+id/rulette"
+        app:srcCompat="@drawable/crash" />
 
-    <Button
+    <ImageView
         android:id="@+id/cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/cards"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/crash"
-        app:layout_constraintTop_toBottomOf="@+id/saper" />
+        app:layout_constraintTop_toBottomOf="@+id/saper"
+        app:srcCompat="@drawable/cards" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/roulette"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rulette"
+        app:layout_constraintEnd_toEndOf="@+id/rulette"
+        app:layout_constraintStart_toStartOf="@+id/rulette"
+        app:layout_constraintTop_toTopOf="@+id/rulette" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/saper"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/saper"
+        app:layout_constraintEnd_toEndOf="@+id/saper"
+        app:layout_constraintStart_toStartOf="@+id/saper"
+        app:layout_constraintTop_toTopOf="@+id/saper" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crash"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/crash"
+        app:layout_constraintEnd_toEndOf="@+id/crash"
+        app:layout_constraintStart_toStartOf="@+id/crash"
+        app:layout_constraintTop_toTopOf="@+id/crash" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cards"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cards"
+        app:layout_constraintEnd_toEndOf="@+id/cards"
+        app:layout_constraintStart_toStartOf="@+id/cards"
+        app:layout_constraintTop_toTopOf="@+id/cards" />
 </android.support.constraint.ConstraintLayout>

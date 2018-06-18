@@ -52,8 +52,6 @@ public class Randomizer {
         }else{
             result=1;
         }
-        DatabaseHelper databaseHelper=new DatabaseHelper(context);
-        databaseHelper.addNewCard(collection,result);
         return result;
     }
 }

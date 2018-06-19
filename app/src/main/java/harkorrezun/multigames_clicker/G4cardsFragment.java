@@ -132,6 +132,7 @@ public class G4cardsFragment extends Fragment {
             amount-=myBet;
         }
         editor.putInt("carrots",amount);
+        editor.commit();
         amountV.setText(amount+"");
         seekBar.setMax(amount);
         started=false;

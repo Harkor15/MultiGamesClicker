@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Random;
 
 /**
@@ -153,8 +152,5 @@ public class G1ruletteFragment extends Fragment {
         seekBar.setMax(amount);
         editor.putInt("carrots",amount);
         editor.commit();
-        //seekBar.setProgress(0);
     }
-
-
 }

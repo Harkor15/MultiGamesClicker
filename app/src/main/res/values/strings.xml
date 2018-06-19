@@ -37,4 +37,6 @@
     <string name="setBetValue">You must set bet value!</string>
     <string name="youWin">YOU WIN!</string>
     <string name="youLose">YOU LOSE!</string>
+    <string name="start">Start</string>
+    <string name="liveWin">Live win:</string>
 </resources>

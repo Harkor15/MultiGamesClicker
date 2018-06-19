@@ -7,13 +7,8 @@ import java.util.Random;
 
 public class Randomizer {
     private static int[] lvls={1,3,6,10,15,21,28,36,45,55,66,78,91,105,120};
-    private Context context;
 
-    public Randomizer(Context context){
-        this.context=context;
-    }
-
-    public int opening(int collection){
+    public int opening(){
         Random random=new Random();
         int ran=random.nextInt();
         ran=Math.abs(ran);

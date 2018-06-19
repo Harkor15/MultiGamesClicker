@@ -21,8 +21,8 @@ public class F2shopOpeningFragment extends Fragment {
         ImageView image=view.findViewById(R.id.newCardImage);
         Bundle arguments=getArguments();
         final int collectionId=arguments.getInt("collection");
-        Randomizer randomizer=new Randomizer(getContext());
-        int result=randomizer.opening(collectionId);
+        Randomizer randomizer=new Randomizer();
+        int result=randomizer.opening();
         final DatabaseHelper db=new DatabaseHelper(getContext());
         Card card=db.getCard(result,collectionId);
         db.addNewCard(collectionId,result);

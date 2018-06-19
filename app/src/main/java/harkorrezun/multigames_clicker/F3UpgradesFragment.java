@@ -44,6 +44,8 @@ public class F3UpgradesFragment extends Fragment {
         sharedPreferences=getContext().getSharedPreferences("harkor.multigamesclicker", Context.MODE_PRIVATE);
         multiplayTap=sharedPreferences.getInt("multiplayCarrot",1);
         multiplayPiano=sharedPreferences.getInt("multiplay",1);
+        Log.d("Multiplay tap",multiplayTap+"");
+        Log.d("Multiplay piano",multiplayPiano+"");
         carrotAmount=sharedPreferences.getInt("carrots",0);
         editor=sharedPreferences.edit();
         amount.setText(""+carrotAmount);
@@ -74,7 +76,12 @@ public class F3UpgradesFragment extends Fragment {
         }else if (multiplay==2){
             return 1;
         }else {
-            return (int) Math.sqrt(multiplay);
+            int result=1;
+            do{
+                result++;
+                multiplay/=2;
+            }while(multiplay!=2);
+            return result;
         }
     }
     private void buyPiano(){

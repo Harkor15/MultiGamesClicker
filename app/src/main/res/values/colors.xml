@@ -10,10 +10,14 @@
     <color name="jet">#0d0106</color>
     <color name="priceColor">#ff4081</color>
     <color name="rouletteGreen2">#00ff00</color>
+    <color name="crashGreen">#00ff00</color>
+    <color name="crashRed">#ff0000</color>
     <color name="rouletteGreen">#005c03</color>
     <color name="rouletteRed2">#ff0000</color>
     <color name="rouletteRed">#560201</color>
     <color name="rouletteBlack2">#a0a0a0</color>
     <color name="rouletteBlack">#010101</color>
+    <color name="black">#000000</color>
+    <color name="darkGray">#A9A9A9</color>
 
 </resources>

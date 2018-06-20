@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/crashCrash" />
 
     <SeekBar
-        android:id="@+id/CrashSeekBar"
+        android:id="@+id/crashSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/crashLiveWin"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CrashSeekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/crashSeekBar" />
 
     <TextView
         android:id="@+id/crashLiveWin"
@@ -110,7 +110,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="2.56"
+        android:text="1.0"
+        android:textColor="@android:color/darker_gray"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/crashProgressBar"
         app:layout_constraintEnd_toEndOf="@+id/crashProgressBar"
@@ -128,11 +129,11 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/CrashSeekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/crashSeekBar" />
 
     <ProgressBar
         android:id="@+id/crashProgressBar"
-        style="?android:attr/progressBarStyle"
+        style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -140,7 +141,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:max="100"
-        android:progress="70"
+        android:progress="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"

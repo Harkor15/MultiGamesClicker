@@ -39,4 +39,6 @@
     <string name="youLose">YOU LOSE!</string>
     <string name="start">Start</string>
     <string name="liveWin">Live win:</string>
+    <string name="stop">Stop</string>
+    <string name="restart">Restart</string>
 </resources>

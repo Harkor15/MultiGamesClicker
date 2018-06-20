@@ -20,10 +20,24 @@ public class F2shopFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_f2_shop,container,false);
         ConstraintLayout scat1=view.findViewById(R.id.scat1);
+        ConstraintLayout scat2=view.findViewById(R.id.scat2);
+        ConstraintLayout scat3=view.findViewById(R.id.scat3);
         scat1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toCategory(1,R.string.football);
+            }
+        });
+        scat2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toCategory(2,R.string.rl);
+            }
+        });
+        scat3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toCategory(3,R.string.csgo);
             }
         });
         return view;

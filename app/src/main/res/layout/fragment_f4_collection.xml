@@ -49,7 +49,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/football" />
+                    app:srcCompat="@drawable/cat_football" />
 
                 <TextView
                     android:id="@+id/textViewCat1"
@@ -73,30 +73,31 @@
                 app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageViewCat2"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewCat2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mar" />
+                    app:srcCompat="@drawable/cat_rl" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/textViewCat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GTA V"
+                    android:text="@string/rl"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewCat2" />
 
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/cat3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
@@ -104,88 +105,28 @@
                 app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageViewCat3"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mar" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rocket League"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
-                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
-                app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewCat3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mar" />
+                    app:srcCompat="@drawable/cat_csgo" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/textViewCat3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CS:GO"
+                    android:text="@string/csgo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewCat3" />
             </android.support.constraint.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
-                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
-                app:layout_constraintTop_toTopOf="@+id/horizontalScrollView">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/mar" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FIFA"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -21,10 +21,23 @@ public class F4collectionFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_f4_collection,container,false);
         ConstraintLayout c1=view.findViewById(R.id.cat1);
         ConstraintLayout c2=view.findViewById(R.id.cat2);
-                c1.setOnClickListener(new View.OnClickListener() {
+        ConstraintLayout c3=view.findViewById(R.id.cat3);
+        c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 open(1,getResources().getString(R.string.football));
+            }
+        });
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open(2,getResources().getString(R.string.rl));
+            }
+        });
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open(3,getResources().getString(R.string.csgo));
             }
         });
 

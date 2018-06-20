@@ -41,4 +41,9 @@
     <string name="liveWin">Live win:</string>
     <string name="stop">Stop</string>
     <string name="restart">Restart</string>
+    <string name="actualReward">Actual reward:</string>
+    <string name="reward">Reward:</string>
+    <string name="multiplay">Multiplay:</string>
+    <string name="rl">Rucket League</string>
+    <string name="csgo">CS-GO</string>
 </resources>
